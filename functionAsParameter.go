@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-func getSayHello(name string, filter func(string) bool) string {
+type Filter func(string) bool
+
+func getSayHello(name string, filter Filter) string {
 	var result string
 
 	if filter(name) {
